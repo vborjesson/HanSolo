@@ -20,5 +20,7 @@ cd HanSolo
 
 Run the program: 
 ```
-~/nextflow HanSolo.nf --fasta --wind --step --working_dir 
+~/nextflow HanSolo.nf --fasta --working_dir -c HanSolo.config 
 
+```
+The heat map is located in the specified working_dir 
