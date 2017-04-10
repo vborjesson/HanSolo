@@ -6,10 +6,12 @@ HanSolo is a program that takes a single or multi fasta file as input and return
 
 In order to run the program packages needs to be installed and the environmant needs to be setup. 
 
-Install nextflow
+Install nextflow acording to https://www.nextflow.io/
+
+Then clone this repository  
 
 ```
-# Clone the directory in your home directory
+# Clone the directory to your home directory
 git clone ..
 cd HanSolo
 ```
@@ -18,5 +20,5 @@ cd HanSolo
 
 Run the program: 
 ```
-~/nextflow HanSolo.nf --fasta --wind --step 
+~/nextflow HanSolo.nf --fasta --wind --step --working_dir 
 
