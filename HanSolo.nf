@@ -5,18 +5,18 @@
 
 params.fasta = ""
 fa = file(params.fasta)
-params.working_dir = "~/HanSolo/HanSolo_out" // Path 
+params.working_dir = "/home/vanja/HanSolo/HanSolo_out" // Path 
 params.wind = "" // window size
 params.step = "" // step size
 params.out1 = "out1" // name of outfile
 params.out2 = "out2" // second outfile 
 
-GC_python = "~/HanSolo/vanja_HanSolo.py" 
-GC_R = "~/HanSolo/Vanja_HanSolo.R"
+GC_python = "~/HanSolo/HanSolo.py" 
+GC_R = "~/HanSolo/HanSolo.R"
 
 process GC_freq {
 
-	publishDir params.working_dir , mode: "copy", overwrite: true
+//	publishDir "${params.working_dir}" , mode: "copy", overwrite: true
 //	errorStrategy: 'ignore'
 
 	input:
@@ -34,17 +34,17 @@ process GC_freq {
 
 process plot_R {
 	
-	publishDir params.working_dir , mode: "copy", overwrite: true 
+	publishDir "${params.working_dir}" , mode: "copy", overwrite: true 
 
 	input:
 	set out1, out2 from csv
 
 	output: 
-	file "output_R" into plots
+	set file("output_R"), file("plot.pdf") into plots
 
 	script:
 	"""
-	Rscript ${GC_R} ${out1} ${out2} plot_out > output_R
+	Rscript ${GC_R} ${out1} ${out2} plot > output_R
 	"""
 
 }
