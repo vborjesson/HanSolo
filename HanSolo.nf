@@ -5,11 +5,6 @@
 
 params.fasta = ""
 fa = file(params.fasta)
-params.working_dir = "/home/vanja/HanSolo/HanSolo_out" // Path 
-params.wind = "" // window size
-params.step = "" // step size
-params.out1 = "out1" // name of outfile
-params.out2 = "out2" // second outfile 
 
 GC_python = "~/HanSolo/HanSolo.py" 
 GC_R = "~/HanSolo/HanSolo.R"
@@ -44,7 +39,7 @@ process plot_R {
 
 	script:
 	"""
-	Rscript ${GC_R} ${out1} ${out2} plot > output_R
+	Rscript ${GC_R} ${out1} ${out2} plot > output_R 
 	"""
 
 }
