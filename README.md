@@ -7,6 +7,7 @@ HanSolo is a program that takes a single or multi fasta file as input and return
 In order to run the program packages needs to be installed and the environmant needs to be setup. 
 
 Install nextflow acording to https://www.nextflow.io/
+Install packages in R; ggplot2 and viridis.  
 
 Then clone this repository  
 
